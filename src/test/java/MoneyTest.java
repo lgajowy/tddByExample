@@ -10,12 +10,12 @@ public class MoneyTest {
 
     @Test
     public void differentCurrenciesShouldNotBeEqual() throws Exception {
-        assertFalse(new Franc(5).equals(new Dollar(5)));
+        assertFalse(Money.franc(5).equals(Money.dollar(5)));
     }
 
     @Test
     public void sameCurrencyWithTheSameAmountShouldBeEqual() throws Exception {
-        assertTrue(new Franc(5).equals(new Franc(5)));
-        assertTrue(new Dollar(5).equals(new Dollar(5)));
+        assertTrue(Money.franc(5).equals(Money.franc(5)));
+        assertTrue(Money.dollar(5).equals(Money.dollar(5)));
     }
 }
