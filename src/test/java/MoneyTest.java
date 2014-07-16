@@ -1,3 +1,5 @@
+import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
@@ -18,6 +20,13 @@ public class MoneyTest {
     public void sameCurrencyWithTheSameAmountShouldBeEqual() throws Exception {
         assertTrue(Money.franc(5).equals(Money.franc(5)));
         assertTrue(Money.dollar(5).equals(Money.dollar(5)));
+    }
+
+    @Test
+    public void shouldMultiplyWithoutChangingTheMoneyValue() throws Exception {
+        Money five = Money.franc(5);
+        Assert.assertEquals(Money.franc(10), five.times(2));
+        Assert.assertEquals(Money.franc(15), five.times(3));
     }
 
     @Test
